@@ -50,4 +50,5 @@ Once the `_template_globals` dict is prepared update the Actual `TEMPLATES` glob
 
     TEMPLATES[0]['OPTIONS']['globals'].update(_template_globals)
 
-##### And you're done, now you can use all the global functions inside your templates by just calling them like python functions :)
+#### And you're done, now you can use all the global functions inside your templates by just calling them like python functions.
+#### In the same manner you can register jinja2 constants and jinja2 filters. Enjoy :)
