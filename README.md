@@ -8,7 +8,7 @@ After Initializing templates configuration in project's settings.py
     TEMPLATES = [
     {
         'BACKEND': 'django_jinja.backend.Jinja2',
-        "DIRS": [os.path.join(ApplicationConfig.get_project_root(), "shared", "thirdparty")],
+        "DIRS": [os.path.join(ApplicationConfig.get_project_root())],
         'APP_DIRS': True,
         'OPTIONS': {
             'match_extension': '.html',
@@ -20,10 +20,6 @@ After Initializing templates configuration in project's settings.py
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
             ],
-            'constants': {
-                'MEDIA_CDN_URL': MEDIA_CDN_URL,
-                'DEFAULT_MEDIA_CDN_URL': DEFAULT_MEDIA_CDN_URL,
-            },
             'globals': {
             },
             'extensions': DEFAULT_EXTENSIONS + [
@@ -54,4 +50,5 @@ Once the `_template_globals` dict is prepared update the Actual `TEMPLATES` glob
 
     TEMPLATES[0]['OPTIONS']['globals'].update(_template_globals)
 
-##### And you're done, now you can use all the global functions inside your templates by just calling them like python functions :)
+#### And you're done, now you can use all the global functions inside your templates by just calling them like python functions.
+#### In the same manner you can register jinja2 constants and jinja2 filters. Enjoy :)
