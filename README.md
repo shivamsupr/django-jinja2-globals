@@ -1,9 +1,9 @@
 # django-jinja2-globals
 
-#### Django Jinja2 Globals is a way to register all the global functions you need in your templates to do perform Python operations inside your templates.
+##### Django Jinja2 Globals is a way to register all the global functions you need in your templates to do perform Python operations inside your templates.
 
 
-##### After Initializing templates configuration in project's settings.py
+After Initializing templates configuration in project's settings.py
 
     TEMPLATES = [
     {
@@ -39,9 +39,9 @@
 	]
 
 
-##### Create a file `app_template_globals.py` in your project's main directory and write all your global functions inside that file which you will need in your templates.
+Create a file `app_template_globals.py` in your project's main directory and write all your global functions inside that file which you will need in your templates.
 
-##### Create a dict and put all the function signature inside that dict:
+Create a dict and put all the function signature inside that dict:
 
     _template_globals = {}
 	for object_name in dir(app_template_globals):
@@ -50,7 +50,7 @@
         _template_globals[object_name] = _obj.__module__ + '.' + _obj.__qualname__
 
 
-##### Once the `_template_globals` dict is prepared update the Actual `TEMPLATES` globals:
+Once the `_template_globals` dict is prepared update the Actual `TEMPLATES` globals:
 
     TEMPLATES[0]['OPTIONS']['globals'].update(_template_globals)
 
