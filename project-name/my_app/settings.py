@@ -3,7 +3,7 @@
 TEMPLATES = [
     {
         'BACKEND': 'django_jinja.backend.Jinja2',
-        "DIRS": [os.path.join(ApplicationConfig.get_project_root())],
+        "DIRS": "PROJECT_ROOT_DIRECTORY",
         'APP_DIRS': True,
         'OPTIONS': {
             'match_extension': '.html',
